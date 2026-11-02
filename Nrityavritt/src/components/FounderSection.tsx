@@ -6,33 +6,8 @@ import Image from 'next/image';
 import { Award, Sparkles, Instagram, Quote, ChevronLeft, ChevronRight, Pause, Play, X, ExternalLink, Phone, ZoomIn } from 'lucide-react';
 
 export default function FounderSection() {
-  // All images from assets for continuous changing slider + Best Performance Certificate
+  // Living Parampara photo showcase
   const founderSlides = [
-    {
-      src: '/images/guru_pt_rajendra_gangani.jpg',
-      alt: 'Guru Pt. Rajendra Gangani Ji with Namita Dwivedi',
-      caption: 'Guru Pt. Rajendra Gangani Ji',
-    },
-    {
-      src: '/images/guru_aditi_mangaldas.jpg',
-      alt: 'Guru Aditi Mangaldas Ji with Namita Dwivedi',
-      caption: 'Guru Aditi Mangaldas Ji',
-    },
-    {
-      src: '/images/guru_monisa_nayak.jpg',
-      alt: 'Guru Monisa Nayak Ji with Namita Dwivedi',
-      caption: 'Guru Monisa Nayak Ji',
-    },
-    {
-      src: '/images/guru_malti_shyam.jpg',
-      alt: 'Guru Malti Shyam Ji with Namita Dwivedi',
-      caption: 'Guru Malti Shyam Ji',
-    },
-    {
-      src: '/images/guru_hemant_panwar.jpg',
-      alt: 'Guru Hemant Panwar Ji with Namita Dwivedi',
-      caption: 'Guru Hemant Panwar Ji',
-    },
     {
       src: '/images/with_ravi_yadav.jpg',
       alt: 'With Ravi Yadav Ji, Kathak Exponent (Jaipur Gharana)',
@@ -128,9 +103,16 @@ export default function FounderSection() {
 
                 {/* Top Badge: Slide Counter & Instagram Button */}
                 <div className="absolute top-3 inset-x-3 flex items-center justify-between z-20">
-                  <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-bold text-amber-300 tracking-wider">
-                    {currentSlide + 1} / {founderSlides.length} • Slideshow
-                  </span>
+                  {founderSlides.length > 1 ? (
+                    <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-bold text-amber-300 tracking-wider">
+                      {currentSlide + 1} / {founderSlides.length} • Slideshow
+                    </span>
+                  ) : (
+                    <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-bold text-amber-300 tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-3 h-3 text-amber-400" />
+                      Living Parampara
+                    </span>
+                  )}
 
                   <a
                     href="https://www.instagram.com/nrityavritt/"
@@ -144,20 +126,24 @@ export default function FounderSection() {
                 </div>
 
                 {/* Left / Right Navigation Arrows */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 border border-white/20 text-white flex items-center justify-center transition-all z-20 hover:scale-110 cursor-pointer"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="w-5 h-5 text-amber-300" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 border border-white/20 text-white flex items-center justify-center transition-all z-20 hover:scale-110 cursor-pointer"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="w-5 h-5 text-amber-300" />
-                </button>
+                {founderSlides.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevSlide}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 border border-white/20 text-white flex items-center justify-center transition-all z-20 hover:scale-110 cursor-pointer"
+                      aria-label="Previous slide"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-amber-300" />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 border border-white/20 text-white flex items-center justify-center transition-all z-20 hover:scale-110 cursor-pointer"
+                      aria-label="Next slide"
+                    >
+                      <ChevronRight className="w-5 h-5 text-amber-300" />
+                    </button>
+                  </>
+                )}
 
                 {/* Bottom Caption Overlay */}
                 <div className="absolute bottom-3 inset-x-3 p-3 rounded-xl bg-[#14060b]/90 backdrop-blur-md border border-amber-500/30 z-20">
@@ -168,30 +154,34 @@ export default function FounderSection() {
                       </h4>
                     </div>
 
-                    <button
-                      onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                      className="p-1.5 rounded-md bg-white/5 hover:bg-white/10 text-stone-300 border border-white/10 transition-colors"
-                      title={isAutoPlaying ? "Pause continuous slider" : "Resume slider"}
-                    >
-                      {isAutoPlaying ? <Pause className="w-3.5 h-3.5 text-amber-300" /> : <Play className="w-3.5 h-3.5 text-amber-300" />}
-                    </button>
+                    {founderSlides.length > 1 && (
+                      <button
+                        onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                        className="p-1.5 rounded-md bg-white/5 hover:bg-white/10 text-stone-300 border border-white/10 transition-colors"
+                        title={isAutoPlaying ? "Pause continuous slider" : "Resume slider"}
+                      >
+                        {isAutoPlaying ? <Pause className="w-3.5 h-3.5 text-amber-300" /> : <Play className="w-3.5 h-3.5 text-amber-300" />}
+                      </button>
+                    )}
                   </div>
 
                   {/* Indicator Dots */}
-                  <div className="flex items-center justify-center gap-1.5 mt-2">
-                    {founderSlides.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentSlide(idx)}
-                        className={`h-1 rounded-full transition-all cursor-pointer ${
-                          currentSlide === idx
-                            ? 'w-6 bg-amber-400'
-                            : 'w-1.5 bg-white/30 hover:bg-white/60'
-                        }`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
+                  {founderSlides.length > 1 && (
+                    <div className="flex items-center justify-center gap-1.5 mt-2">
+                      {founderSlides.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentSlide(idx)}
+                          className={`h-1 rounded-full transition-all cursor-pointer ${
+                            currentSlide === idx
+                              ? 'w-6 bg-amber-400'
+                              : 'w-1.5 bg-white/30 hover:bg-white/60'
+                          }`}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
 
               </div>

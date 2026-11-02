@@ -46,9 +46,6 @@ export default function AdmissionFormSection() {
     setIsSubmitting(true);
     setSubmitError(null);
 
-    let emailDispatched = false;
-
-    // 1. Primary Attempt: internal /api/register (works when hosted on Vercel / Node runtime)
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
@@ -58,58 +55,27 @@ export default function AdmissionFormSection() {
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        const result = await response.json().catch(() => null);
-        if (result && result.success) {
-          emailDispatched = true;
-        }
-      }
-    } catch {
-      // In pure static environments (GitHub Pages), /api/register is not reachable
-    }
+      const result = await response.json().catch(() => null);
 
-    // 2. Direct Static Fallback: FormSubmit sends directly to nrityavritt@gmail.com on GitHub Pages
-    if (!emailDispatched) {
-      try {
-        const fsResponse = await fetch('https://formsubmit.co/ajax/nrityavritt@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify({
-            _subject: `New Kathak Admission Registration: ${data.student_name}`,
-            _template: 'table',
-            _captcha: 'false',
-            'Student Name': data.student_name,
-            'Guardian Name': data.guardian_name || 'N/A (Self / Adult)',
-            'Age': `${data.age} years`,
-            'Phone Number': data.phone,
-            'Kathak Experience': data.experience_level,
-            'Preferred Batch / Track': data.preferred_batch,
-            'Submitted At': new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-          }),
+      if (response.ok && result?.success) {
+        setSubmittedData(data);
+        setIsSuccess(true);
+        // Trigger celebratory confetti in gold, crimson & ivory
+        confetti({
+          particleCount: 160,
+          spread: 85,
+          origin: { y: 0.6 },
+          colors: ['#fde047', '#d4af37', '#be123c', '#ffffff', '#f43f5e'],
         });
-
-        if (fsResponse.ok) {
-          emailDispatched = true;
-        }
-      } catch (err: any) {
-        console.warn('Static email delivery fallback:', err);
+        reset();
+      } else {
+        setSubmitError(result?.error || 'Failed to submit admission enquiry. Please try again.');
       }
+    } catch (err: any) {
+      setSubmitError('Failed to submit enquiry. Please call or WhatsApp the studio directly.');
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setSubmittedData(data);
-    setIsSuccess(true);
-    // Trigger celebratory confetti in gold, crimson & ivory
-    confetti({
-      particleCount: 160,
-      spread: 85,
-      origin: { y: 0.6 },
-      colors: ['#fde047', '#d4af37', '#be123c', '#ffffff', '#f43f5e'],
-    });
-    reset();
-    setIsSubmitting(false);
   };
 
   const generateWhatsAppUrl = (data: FormData) => {
