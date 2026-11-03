@@ -121,7 +121,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#admissions" className="hover:text-amber-300 transition-colors">
-                  Prayag Sangeet Sameeti
+                  Prayag Sangeet Samiti
                 </a>
               </li>
               <li>

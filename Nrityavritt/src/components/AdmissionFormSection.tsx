@@ -46,6 +46,9 @@ export default function AdmissionFormSection() {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    let submitted = false;
+
+    // 1. Try local Next.js API route first (works on Vercel or Node runtime)
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
@@ -56,26 +59,58 @@ export default function AdmissionFormSection() {
       });
 
       const result = await response.json().catch(() => null);
-
       if (response.ok && result?.success) {
-        setSubmittedData(data);
-        setIsSuccess(true);
-        // Trigger celebratory confetti in gold, crimson & ivory
-        confetti({
-          particleCount: 160,
-          spread: 85,
-          origin: { y: 0.6 },
-          colors: ['#fde047', '#d4af37', '#be123c', '#ffffff', '#f43f5e'],
-        });
-        reset();
-      } else {
-        setSubmitError(result?.error || 'Failed to submit admission enquiry. Please try again.');
+        submitted = true;
       }
-    } catch (err: any) {
-      setSubmitError('Failed to submit enquiry. Please call or WhatsApp the studio directly.');
-    } finally {
-      setIsSubmitting(false);
+    } catch {
+      // Fall through to direct dispatch
     }
+
+    // 2. Direct client fallback to FormSubmit (ensures static GitHub Pages exports email nrityavritt@gmail.com)
+    if (!submitted) {
+      try {
+        const fsRes = await fetch('https://formsubmit.co/ajax/nrityavritt@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            _subject: `🩰 New Kathak Registration: ${data.student_name} (${data.preferred_batch})`,
+            _template: 'table',
+            'Student Name': data.student_name,
+            'Guardian Name': data.guardian_name || 'N/A',
+            'Age': data.age,
+            'Phone Number': data.phone,
+            'Kathak Experience': data.experience_level,
+            'Preferred Batch': data.preferred_batch,
+          }),
+        });
+
+        if (fsRes.ok) {
+          submitted = true;
+        }
+      } catch {
+        // Handled below
+      }
+    }
+
+    if (submitted) {
+      setSubmittedData(data);
+      setIsSuccess(true);
+      // Trigger celebratory confetti in gold, crimson & ivory
+      confetti({
+        particleCount: 160,
+        spread: 85,
+        origin: { y: 0.6 },
+        colors: ['#fde047', '#d4af37', '#be123c', '#ffffff', '#f43f5e'],
+      });
+      reset();
+    } else {
+      setSubmitError('Failed to dispatch enquiry. Please call or WhatsApp the studio directly.');
+    }
+
+    setIsSubmitting(false);
   };
 
   const generateWhatsAppUrl = (data: FormData) => {
@@ -206,7 +241,7 @@ export default function AdmissionFormSection() {
                   >
                     <option value="Beginner (No prior Kathak training)">Beginner (No prior Kathak training)</option>
                     <option value="Elementary (Basic Tatkar & Hastak known)">Elementary (Basic Tatkar & Hastak known)</option>
-                    <option value="Intermediate (2-4 years / Gandharva or Prayag Sangeet Sameeti)">Intermediate (2-4 years / Gandharva or Prayag Sangeet Sameeti)</option>
+                    <option value="Intermediate (2-4 years / Gandharva or Prayag Sangeet Samiti)">Intermediate (2-4 years / Gandharva or Prayag Sangeet Samiti)</option>
                     <option value="Advanced / Transfer Disciple">Advanced / Transfer Disciple</option>
                   </select>
                 </div>

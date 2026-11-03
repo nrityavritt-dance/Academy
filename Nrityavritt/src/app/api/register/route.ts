@@ -95,7 +95,7 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    // If SMTP credentials are configured, send real email
+    // If SMTP credentials are configured, send real email via nodemailer; otherwise dispatch to FormSubmit
     if (smtpPass) {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -112,6 +112,30 @@ export async function POST(request: Request) {
         subject: `🩰 New Admission Registration: ${data.student_name} (${data.preferred_batch})`,
         html: htmlBody,
       });
+    } else {
+      // Dispatched to FormSubmit ensuring nrityavritt@gmail.com receives the email even without custom SMTP config
+      try {
+        await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+          },
+          body: JSON.stringify({
+            _subject: `🩰 New Admission Registration: ${data.student_name} (${data.preferred_batch})`,
+            _template: 'table',
+            'Student Name': data.student_name,
+            'Guardian Name': data.guardian_name || 'N/A',
+            'Age': data.age,
+            'Phone Number': data.phone,
+            'Kathak Experience': data.experience_level,
+            'Preferred Batch': data.preferred_batch,
+          }),
+        });
+      } catch (fsErr) {
+        console.error('FormSubmit dispatch fallback error:', fsErr);
+      }
     }
 
     return NextResponse.json({

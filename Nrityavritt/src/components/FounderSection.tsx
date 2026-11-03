@@ -35,8 +35,8 @@ export default function FounderSection() {
     },
     {
       src: '/images/with_ravi_yadav.jpg',
-      alt: 'With Ravi Yadav ji',
-      caption: 'With Ravi Yadav ji',
+      alt: 'Ravi Yadav Ji',
+      caption: 'Ravi Yadav Ji',
     },
   ];
 
@@ -79,7 +79,8 @@ export default function FounderSection() {
             <span>Artistic Direction & Living Parampara</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-            Meet our <span className="gold-text-gradient font-cinzel">Artistic Director</span>
+            Meet our <br />
+            <span className="gold-text-gradient font-cinzel">Artistic Director</span>
           </h2>
         </div>
 
@@ -265,7 +266,7 @@ export default function FounderSection() {
                     Best Performance Award & Certification
                   </h4>
                   <p className="text-stone-300 text-xs mt-1.5 leading-relaxed font-sans">
-                    Conferred upon Ms. Namita Dwivedi in honor of exemplary classical execution, stage choreography, and lifelong dedication to Jaipur Gharana Kathak parampara.
+                    Won the &ldquo;Best Performance Award&rdquo; (Audience Choice) at the 6th FootPrint Film Festival (2025) held at IGNCA, New Delhi, for exemplary classical execution, stage choreography, and adherence to Kathak parampara.
                   </p>
                   <div className="mt-3">
                     <button
@@ -280,17 +281,20 @@ export default function FounderSection() {
               </div>
             </div>
 
-            {/* Quick Contact Bar (Mobile only, hidden in system view) */}
-            <div className="lg:hidden p-3.5 rounded-xl bg-gradient-to-r from-amber-950/30 via-rose-950/20 to-black/40 border border-amber-500/30 flex items-center gap-2 text-xs mt-1">
-              <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span className="text-stone-300 font-medium">Direct Inquiries:</span>
-              <a href="tel:7011335616" className="text-amber-300 hover:text-white font-semibold">
-                7011335616
-              </a>
-              <span className="text-white/20">/</span>
-              <a href="tel:8860256229" className="text-amber-300 hover:text-white font-semibold">
-                8860256229
-              </a>
+            {/* Pedagogical Credentials & Lineage Badges (Fills space & balances height) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-amber-500/20 flex flex-col justify-center">
+                <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Classical Mastery</span>
+                <span className="text-xs text-white font-medium mt-0.5">Alankar Poorna (Gandharva Mahavidyalaya)</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-amber-500/20 flex flex-col justify-center">
+                <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Academic Pedagogy</span>
+                <span className="text-xs text-white font-medium mt-0.5">MA English (Jamia) • B.Ed. (IP Univ)</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-amber-500/20 flex flex-col justify-center">
+                <span className="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Guru Parampara</span>
+                <span className="text-xs text-white font-medium mt-0.5">Jaipur Gharana Kathak Lineage</span>
+              </div>
             </div>
 
           </motion.div>
@@ -343,7 +347,7 @@ export default function FounderSection() {
               </div>
 
               <p className="text-center text-xs text-stone-300 mt-4 font-sans">
-                Honoring exemplary classical execution, stage choreography, and adherence to Jaipur Gharana Kathak parampara.
+                Won the &ldquo;Best Performance Award&rdquo; (Audience Choice) at the 6th FootPrint Film Festival (2025) held at IGNCA, New Delhi, for exemplary classical execution, stage choreography, and adherence to Kathak parampara.
               </p>
             </motion.div>
           </motion.div>

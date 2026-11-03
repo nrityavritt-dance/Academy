@@ -39,7 +39,7 @@ export default function CurriculumSection() {
         "Comparative study of Jaipur, Lucknow, and Banaras Gharanas",
         "Detailed study of the Navarasas (9 Classical Emotions in Indian art)",
         "13 Samyuta Hasta Mudras (Combined hand gestures) and practical usage",
-        "Notation writing of bols in Gandharva Mahavidyalaya and Prayag Sangeet Sameeti examination formats",
+        "Notation writing of bols in Gandharva Mahavidyalaya and Prayag Sangeet Samiti examination formats",
       ],
     },
     madhyama: {
@@ -72,7 +72,7 @@ export default function CurriculumSection() {
         "Angikam Bhuvanam Yasya Vachikam Sarva Vangmayam (Natya invocation)",
         "Yato Hasta Stato Drishti, Yato Drishtis Tato Mana (The fundamental shloka of expression)",
         "Life and contributions of Jaipur Gharana legends and Sangeet Natak Akademi maestros",
-        "Annual Gandharva Mahavidyalaya and Prayag Sangeet Sameeti exam pattern and mock viva preparation",
+        "Annual Gandharva Mahavidyalaya and Prayag Sangeet Samiti exam pattern and mock viva preparation",
       ],
     },
   };
@@ -104,7 +104,7 @@ export default function CurriculumSection() {
             Academic & Artistic <span className="gold-text-gradient font-cinzel">Curriculum</span>
           </h2>
           <p className="text-stone-300 text-sm sm:text-base mt-4 font-sans leading-relaxed">
-            Our syllabus integrates Gandharva Mahavidyalaya and Prayag Sangeet Sameeti degree certifications with rich practical stage repertoire, taking students step-by-step from foundational footwork to confident classical stage mastery.
+            Our syllabus integrates Gandharva Mahavidyalaya and Prayag Sangeet Samiti degree certifications with rich practical stage repertoire, taking students step-by-step from foundational footwork to confident classical stage mastery.
           </p>
         </div>
 

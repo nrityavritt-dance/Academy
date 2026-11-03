@@ -77,7 +77,7 @@ export default function AboutSection() {
                     Affiliated Syllabi & Examinations
                   </h4>
                   <p className="text-xs text-stone-300 mt-0.5 leading-relaxed">
-                    Nrityavritt prepares students for the accredited annual examination syllabi of <strong>Akhil Bharatiya Gandharva Mahavidyalaya Mandal</strong> and <strong>Prayag Sangeet Sameeti</strong>, awarding nationally recognized diplomas and certificates from foundational to advanced degrees.
+                    Nrityavritt prepares students for the accredited annual examination syllabi of <strong>Akhil Bharatiya Gandharva Mahavidyalaya Mandal</strong> and <strong>Prayag Sangeet Samiti</strong>, awarding nationally recognized diplomas and certificates from foundational to advanced degrees.
                   </p>
                 </div>
               </div>

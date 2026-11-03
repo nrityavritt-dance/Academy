@@ -36,7 +36,7 @@ export default function LocationSection() {
                   Directions & Surroundings
                 </span>
                 <a
-                  href="https://maps.google.com/?q=Balaji+Bhawan+South+Ganesh+Nagar+Delhi"
+                  href="https://maps.app.goo.gl/hvB9rAMb5Ch9tKEF6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-amber-300 hover:text-white flex items-center gap-1 font-semibold transition-colors"
@@ -70,27 +70,24 @@ export default function LocationSection() {
               </div>
             </div>
 
-            {/* Visual Map Mockup / Embed container */}
-            <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-amber-500/30 relative bg-[#17080e] flex items-center justify-center p-6 text-center">
-              {/* Stylized Map Backdrop */}
-              <div className="absolute inset-0 opacity-30 mandala-bg" />
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full bg-rose-900 border-2 border-amber-400 flex items-center justify-center shadow-2xl mb-3 animate-bounce">
-                  <MapPin className="w-7 h-7 text-amber-300" />
-                </div>
-                <h4 className="font-serif font-bold text-white text-lg">
-                  Balaji Bhawan • South Ganesh Nagar
-                </h4>
-                <p className="text-xs text-stone-300 mt-1 max-w-sm">
-                  1st Floor, D-125, South Ganesh Nagar, Delhi - 110092
-                </p>
+            {/* Visual Map Embed container */}
+            <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-amber-500/30 relative bg-[#17080e] shadow-xl">
+              <iframe
+                title="Nrityavritt Studio Google Map"
+                src="https://maps.google.com/maps?q=D-125+Balaji+Bhawan+South+Ganesh+Nagar+Delhi+110092&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0 filter contrast-[1.05] brightness-[0.9]"
+                loading="lazy"
+                allowFullScreen
+              />
+              <div className="absolute bottom-3 right-3 z-10">
                 <a
-                  href="https://maps.google.com/?q=D-125+Balaji+Bhawan+South+Ganesh+Nagar+Delhi+110092"
+                  href="https://maps.app.goo.gl/hvB9rAMb5Ch9tKEF6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-lg"
+                  className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold text-xs uppercase tracking-wider transition-all shadow-xl flex items-center gap-1.5"
                 >
-                  Get Driving Directions
+                  <span>Open in Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
@@ -211,6 +208,37 @@ export default function LocationSection() {
                 </div>
               </div>
 
+            </div>
+
+            {/* Studio Facility & Practice Highlights (Fills whitespace & balances height) */}
+            <div className="p-5 sm:p-6 rounded-3xl glass-card border border-amber-500/20 bg-gradient-to-br from-[#18060e]/80 via-[#120509]/90 to-[#1e0712]/80 shadow-xl">
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                <h4 className="font-serif font-bold text-white text-sm sm:text-base">
+                  Studio Highlights & Environment
+                </h4>
+              </div>
+              <p className="text-stone-300 text-xs font-sans leading-relaxed mb-3">
+                Equipped specifically for classical Kathak riyaaz, tatkar footwork practice, and individual attention:
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2">
+                  <span className="text-amber-400 font-bold">✦</span>
+                  <span className="text-stone-200">Resonant Wooden Floor</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2">
+                  <span className="text-amber-400 font-bold">✦</span>
+                  <span className="text-stone-200">Rehearsal Wall Mirrors</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2">
+                  <span className="text-amber-400 font-bold">✦</span>
+                  <span className="text-stone-200">Hi-Fi Audio Acoustics</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2">
+                  <span className="text-amber-400 font-bold">✦</span>
+                  <span className="text-stone-200">Serene Ambience</span>
+                </div>
+              </div>
             </div>
 
           </div>

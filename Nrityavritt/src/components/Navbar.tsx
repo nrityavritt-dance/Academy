@@ -54,51 +54,54 @@ export default function Navbar() {
             : 'bg-[#0f0508]/80 backdrop-blur-sm py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           
-          {/* Logo & Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-amber-500/60 shadow-lg shadow-amber-900/30 group-hover:border-amber-400 transition-colors shrink-0">
-              <Image
-                src="/images/academy_logo.jpg"
-                alt="Nrityavritt Logo"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className="font-cinzel text-base sm:text-lg font-bold tracking-wider text-white group-hover:text-amber-300 transition-colors leading-tight">
-                NRITYAVRITT
-              </span>
-              <span className="font-devanagari text-xs sm:text-sm text-amber-400 leading-tight">
-                नृत्यवृत्त
-              </span>
-            </div>
-          </Link>
+          {/* Left Brand + Navigation Group */}
+          <div className="flex items-center gap-8 lg:gap-10 xl:gap-14 min-w-0">
+            {/* Logo & Brand */}
+            <Link href="/" className="flex items-center gap-3 group shrink-0">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-amber-500/60 shadow-lg shadow-amber-900/30 group-hover:border-amber-400 transition-colors shrink-0">
+                <Image
+                  src="/images/academy_logo.jpg"
+                  alt="Nrityavritt Logo"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <span className="font-cinzel text-base sm:text-lg font-bold tracking-wider text-white group-hover:text-amber-300 transition-colors leading-tight">
+                  NRITYAVRITT
+                </span>
+                <span className="font-devanagari text-xs sm:text-sm text-amber-400 leading-tight">
+                  नृत्यवृत्त
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-xs uppercase tracking-widest font-medium text-stone-300 hover:text-amber-300 transition-colors py-1"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-[11px] xl:text-xs uppercase tracking-wider font-semibold text-stone-300 hover:text-amber-300 transition-colors py-1 whitespace-nowrap"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+          </div>
 
           {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center gap-2.5">
+          <div className="hidden sm:flex items-center gap-2 lg:gap-2.5 shrink-0">
             {/* Facebook Link */}
             <a
               href="https://www.facebook.com/share/18Jd9s24cC/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="p-2 text-stone-400 hover:text-blue-400 transition-colors rounded-full hover:bg-blue-950/40 border border-white/5"
+              className="p-1.5 lg:p-2 text-stone-400 hover:text-blue-400 transition-colors rounded-full hover:bg-blue-950/40 border border-white/5"
               title="Nrityavritt on Facebook"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -112,7 +115,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="p-2 text-stone-400 hover:text-rose-400 transition-colors rounded-full hover:bg-rose-950/40 border border-white/5"
+              className="p-1.5 lg:p-2 text-stone-400 hover:text-rose-400 transition-colors rounded-full hover:bg-rose-950/40 border border-white/5"
               title="Nrityavritt on Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -124,7 +127,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="p-2 text-stone-400 hover:text-red-400 transition-colors rounded-full hover:bg-red-950/40 border border-white/5"
+              className="p-1.5 lg:p-2 text-stone-400 hover:text-red-400 transition-colors rounded-full hover:bg-red-950/40 border border-white/5"
               title="Nrityavritt on YouTube"
             >
               <Youtube className="w-4 h-4" />
@@ -132,7 +135,7 @@ export default function Navbar() {
 
             <a
               href="#trial-form"
-              className="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 shadow-md transition-all duration-300"
+              className="px-3.5 py-1.5 lg:px-4 lg:py-2 rounded-full text-[11px] lg:text-xs font-semibold uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 shadow-md transition-all duration-300 whitespace-nowrap"
             >
               Book Trial
             </a>
@@ -141,7 +144,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-stone-300 hover:text-amber-400 focus:outline-none"
+            className="lg:hidden p-2 text-stone-300 hover:text-amber-400 focus:outline-none"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -150,7 +153,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden bg-[#120609]/98 border-b border-amber-500/30 px-6 py-5 transition-all">
+          <div className="lg:hidden bg-[#120609]/98 border-b border-amber-500/30 px-6 py-5 transition-all">
             <nav className="flex flex-col gap-3.5">
               {navLinks.map((link) => (
                 <a
@@ -191,8 +194,12 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 hover:text-blue-400"
+                    title="Facebook"
                   >
-                    Facebook
+                    <svg className="w-3.5 h-3.5 fill-current text-blue-400" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    <span>Facebook</span>
                   </a>
                   <span>•</span>
                   <a

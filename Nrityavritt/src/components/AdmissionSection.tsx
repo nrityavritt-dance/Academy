@@ -11,7 +11,7 @@ export default function AdmissionSection() {
       desc: "Nationally accredited examination syllabus offering structured classical Kathak grading, theoretical notation (padhant), and recognized stage performance diplomas.",
     },
     {
-      name: "Prayag Sangeet Sameeti",
+      name: "Prayag Sangeet Samiti",
       board: "Prayag Sangeet Samiti, Prayagraj",
       levels: "Junior Diploma • Senior Diploma • Sangeet Prabhakar • Praveen",
       desc: "Eminent classical performing arts institution conducting certified annual examinations and awarding nationally recognized classical dance diplomas and degrees.",

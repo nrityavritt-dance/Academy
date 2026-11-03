@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Indian classical dance classes South Ganesh Nagar",
     "Weekend Kathak batch Delhi",
     "Gandharva Mahavidyalaya Alankar Poorna Kathak",
-    "Prayag Sangeet Sameeti Kathak certification",
+    "Prayag Sangeet Samiti Kathak certification",
     "Learn Kathak online Delhi"
   ],
   openGraph: {
