@@ -36,7 +36,7 @@ export default function LocationSection() {
                   Directions & Surroundings
                 </span>
                 <a
-                  href="https://maps.app.goo.gl/hvB9rAMb5Ch9tKEF6"
+                  href="https://www.google.com/maps/place/Nrityavritt/@28.62249,77.2832195,405m/data=!3m1!1e3!4m6!3m5!1s0x390ce32c9f043ab5:0x137708007591b3!8m2!3d28.6224211!4d77.2846633!16s%2Fg%2F11z5b66ssv"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-amber-300 hover:text-white flex items-center gap-1 font-semibold transition-colors"
@@ -74,14 +74,14 @@ export default function LocationSection() {
             <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-amber-500/30 relative bg-[#17080e] shadow-xl">
               <iframe
                 title="Nrityavritt Studio Google Map"
-                src="https://maps.google.com/maps?q=D-125+Balaji+Bhawan+South+Ganesh+Nagar+Delhi+110092&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full border-0 filter contrast-[1.05] brightness-[0.9]"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1763.6348004979968!2d77.2832195!3d28.62249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce32c9f043ab5%3A0x137708007591b3!2sNrityavritt!5e0!3m2!1sen!2sin!4v1714800000000!5m2!1sen!2sin"
+                className="w-full h-full border-0 filter contrast-[1.05] brightness-[0.92]"
                 loading="lazy"
                 allowFullScreen
               />
               <div className="absolute bottom-3 right-3 z-10">
                 <a
-                  href="https://maps.app.goo.gl/hvB9rAMb5Ch9tKEF6"
+                  href="https://www.google.com/maps/place/Nrityavritt/@28.62249,77.2832195,405m/data=!3m1!1e3!4m6!3m5!1s0x390ce32c9f043ab5:0x137708007591b3!8m2!3d28.6224211!4d77.2846633!16s%2Fg%2F11z5b66ssv"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold text-xs uppercase tracking-wider transition-all shadow-xl flex items-center gap-1.5"
