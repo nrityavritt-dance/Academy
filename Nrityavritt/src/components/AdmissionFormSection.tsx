@@ -38,7 +38,7 @@ export default function AdmissionFormSection() {
       age: undefined,
       phone: '',
       experience_level: 'Beginner (No prior Kathak training)',
-      preferred_batch: 'Weekend Batch (Saturday & Sunday)',
+      preferred_batch: 'Weekend Batch',
     },
   });
 
@@ -214,26 +214,17 @@ export default function AdmissionFormSection() {
                 {/* 6. Preferred Batch / Track */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold uppercase tracking-wider text-amber-200/90">
-                    Preferred Batch / Track <span className="text-rose-400">*</span>
+                    Preferred Batch <span className="text-rose-400">*</span>
                   </label>
                   <select
                     {...register('preferred_batch')}
                     className="bg-[#1f0910] border border-amber-500/20 focus:border-amber-400 rounded-xl px-4 py-3 text-white text-sm outline-none transition-all cursor-pointer"
                   >
-                    <option value="Weekend Batch (Saturday & Sunday)">
-                      Weekend Batch (Saturday & Sunday)
+                    <option value="Weekend Batch">
+                      Weekend Batch
                     </option>
-                    <option value="Weekday Evening Batch">
-                      Weekday Evening Batch
-                    </option>
-                    <option value="Junior Classical Foundation (Ages 5-12)">
-                      Junior Classical Foundation (Ages 5-12)
-                    </option>
-                    <option value="Gandharva Mahavidyalaya Certified Exam Track">
-                      Gandharva Mahavidyalaya Certified Exam Track
-                    </option>
-                    <option value="Prayag Sangeet Sameeti Certified Exam Track">
-                      Prayag Sangeet Sameeti Certified Exam Track
+                    <option value="Weekday Batch">
+                      Weekday Batch
                     </option>
                   </select>
                 </div>

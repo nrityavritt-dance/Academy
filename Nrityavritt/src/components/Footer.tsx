@@ -27,18 +27,13 @@ export default function Footer() {
                   className="object-cover"
                 />
               </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-devanagari text-2xl text-amber-400">
-                    नृत्यवृत्त
-                  </span>
-                  <span className="font-cinzel text-lg font-bold text-white tracking-wider">
-                    NRITYAVRITT
-                  </span>
-                </div>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-amber-200/60 font-sans">
-                  Academy of Classical Kathak Dance
-                </p>
+              <div className="flex flex-col justify-center">
+                <span className="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-white leading-tight">
+                  NRITYAVRITT
+                </span>
+                <span className="font-devanagari text-sm sm:text-base text-amber-400 leading-tight">
+                  नृत्यवृत्त
+                </span>
               </div>
             </div>
 

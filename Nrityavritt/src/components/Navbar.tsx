@@ -67,18 +67,13 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-devanagari text-lg text-amber-400 leading-none">
-                  नृत्यवृत्त
-                </span>
-                <span className="font-cinzel text-base font-bold tracking-wider text-white group-hover:text-amber-300 transition-colors">
-                  NRITYAVRITT
-                </span>
-              </div>
-              <p className="text-[9px] tracking-[0.2em] uppercase text-amber-200/60 font-sans font-medium">
-                Kathak Dance Academy • Delhi
-              </p>
+            <div className="flex flex-col justify-center">
+              <span className="font-cinzel text-base sm:text-lg font-bold tracking-wider text-white group-hover:text-amber-300 transition-colors leading-tight">
+                NRITYAVRITT
+              </span>
+              <span className="font-devanagari text-xs sm:text-sm text-amber-400 leading-tight">
+                नृत्यवृत्त
+              </span>
             </div>
           </Link>
 

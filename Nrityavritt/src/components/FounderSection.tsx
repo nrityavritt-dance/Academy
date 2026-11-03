@@ -3,15 +3,40 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Award, Sparkles, Instagram, Quote, ChevronLeft, ChevronRight, Pause, Play, X, ExternalLink, Phone, ZoomIn } from 'lucide-react';
+import { Award, Sparkles, Instagram, Quote, ChevronLeft, ChevronRight, Pause, Play, X, Phone, ZoomIn } from 'lucide-react';
 
 export default function FounderSection() {
-  // Living Parampara photo showcase
+  // All images for continuous changing slider
   const founderSlides = [
     {
+      src: '/images/guru_pt_rajendra_gangani.jpg',
+      alt: 'Guru Pt. Rajendra Gangani Ji with Namita Dwivedi',
+      caption: 'Guru Pt. Rajendra Gangani Ji',
+    },
+    {
+      src: '/images/guru_aditi_mangaldas.jpg',
+      alt: 'Guru Aditi Mangaldas Ji with Namita Dwivedi',
+      caption: 'Guru Aditi Mangaldas Ji',
+    },
+    {
+      src: '/images/guru_monisa_nayak.jpg',
+      alt: 'Guru Monisa Nayak Ji with Namita Dwivedi',
+      caption: 'Guru Monisa Nayak Ji',
+    },
+    {
+      src: '/images/guru_malti_shyam.jpg',
+      alt: 'Guru Malti Shyam Ji with Namita Dwivedi',
+      caption: 'Guru Malti Shyam Ji',
+    },
+    {
+      src: '/images/guru_hemant_panwar.jpg',
+      alt: 'Guru Hemant Panwar Ji with Namita Dwivedi',
+      caption: 'Guru Hemant Panwar Ji',
+    },
+    {
       src: '/images/with_ravi_yadav.jpg',
-      alt: 'With Ravi Yadav Ji, Kathak Exponent (Jaipur Gharana)',
-      caption: 'With Ravi Yadav Ji, Kathak Exponent (Jaipur Gharana)',
+      alt: 'With Ravi ji',
+      caption: 'With Ravi ji',
     },
   ];
 
@@ -54,7 +79,7 @@ export default function FounderSection() {
             <span>Artistic Direction & Living Parampara</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-            Meet our artistic director <span className="gold-text-gradient font-cinzel">Namita Dwivedi</span>
+            Meet our <span className="gold-text-gradient font-cinzel">Artistic Director</span>
           </h2>
         </div>
 
@@ -197,10 +222,7 @@ export default function FounderSection() {
             className="lg:col-span-7 flex flex-col gap-4 text-left justify-center"
           >
             <div>
-              <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
-                Artistic Director & Educator
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
                 Namita Dwivedi
               </h3>
             </div>
@@ -258,28 +280,16 @@ export default function FounderSection() {
               </div>
             </div>
 
-            {/* Quick Contact & Facebook Bar */}
-            <div className="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/30 via-rose-950/20 to-black/40 border border-amber-500/30 flex flex-wrap items-center justify-between gap-3 text-xs mt-1">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-amber-400" />
-                <span className="text-stone-300 font-medium">Direct Inquiries:</span>
-                <a href="tel:7011335616" className="text-amber-300 hover:text-white font-semibold">
-                  7011335616
-                </a>
-                <span className="text-white/20">/</span>
-                <a href="tel:8860256229" className="text-amber-300 hover:text-white font-semibold">
-                  8860256229
-                </a>
-              </div>
-
-              <a
-                href="https://www.facebook.com/share/18Jd9s24cC/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-amber-300 hover:text-white font-semibold underline text-xs"
-              >
-                <span>Visit Facebook Page</span>
-                <ExternalLink className="w-3 h-3" />
+            {/* Quick Contact Bar (Mobile only, hidden in system view) */}
+            <div className="lg:hidden p-3.5 rounded-xl bg-gradient-to-r from-amber-950/30 via-rose-950/20 to-black/40 border border-amber-500/30 flex items-center gap-2 text-xs mt-1">
+              <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span className="text-stone-300 font-medium">Direct Inquiries:</span>
+              <a href="tel:7011335616" className="text-amber-300 hover:text-white font-semibold">
+                7011335616
+              </a>
+              <span className="text-white/20">/</span>
+              <a href="tel:8860256229" className="text-amber-300 hover:text-white font-semibold">
+                8860256229
               </a>
             </div>
 
