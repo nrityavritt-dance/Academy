@@ -35,8 +35,8 @@ export default function FounderSection() {
     },
     {
       src: '/images/with_ravi_yadav.jpg',
-      alt: 'With Ravi ji',
-      caption: 'With Ravi ji',
+      alt: 'With Ravi Yadav ji',
+      caption: 'With Ravi Yadav ji',
     },
   ];
 
